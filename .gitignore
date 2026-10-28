@@ -1,0 +1,30 @@
+# 构建产物
+build/
+dist/
+*.o
+*.obj
+*.a
+*.lib
+*.exe
+
+# 外部依赖（需自行下载，见 README 构建章节）
+whisper.cpp/
+tools/
+
+# 模型文件（体积大，请从 HuggingFace 下载）
+*.bin
+models/
+
+# 日志
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store
