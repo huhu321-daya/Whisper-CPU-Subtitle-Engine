@@ -292,7 +292,7 @@ liveMs = baseMs + (已收音频样本数 * 1000 / 16000) - (缓冲样本数 * 10
 └── .gitignore
 ```
 
-> `include/` 下均为编译期接口声明，实际实现由 whisper.cpp 静态库提供，不参与运行时加载。
+> `include/` 下的头文件来自上游 whisper.cpp / ggml（见「许可证」章节），仅提供编译期接口声明，实际实现由编译时引入的 whisper.cpp 源码提供。
 
 `include/` 中两个版本头文件为上游构建时自动生成的产物，此处固化以便直接编译，需与所用 whisper.cpp 版本保持一致。
 
@@ -338,7 +338,13 @@ powershell -ExecutionPolicy Bypass -File build.ps1 `
 | [ggml](https://github.com/ggerganov/ggml) | MIT |
 | [w64devkit](https://github.com/skeeto/w64devkit) | MIT |
 
-> 本仓库**不包含**任何播放器厂商的二进制文件、源代码或资源。协议描述基于公开的互操作分析，仅用于实现兼容。
+### 第三方头文件
+
+`include/` 目录下的头文件来自 [whisper.cpp](https://github.com/ggerganov/whisper.cpp)（v1.9.5）与 [ggml](https://github.com/ggerganov/ggml)（v0.27.0），版权归其原作者所有，按 MIT License 分发。此处收录仅为固定编译期接口，便于在无网络或离线环境下构建。
+
+若需获取完整源码及原始许可证文本，请访问上述上游仓库。
+
+> 本仓库**不包含**任何播放器厂商的二进制文件、源代码或资源。本实现仅用于在兼容环境中提供语音识别功能。
 
 ---
 
